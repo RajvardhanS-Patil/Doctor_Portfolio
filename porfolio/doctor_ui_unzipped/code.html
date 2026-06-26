@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Julian Thorne | Consultant Physician</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#0d2137",
+                        "on-background": "#141d23",
+                        "surface-container": "#e6eff8",
+                        "on-secondary-fixed": "#002114",
+                        "primary-fixed-dim": "#b5c8e5",
+                        "on-secondary-fixed-variant": "#0e5138",
+                        "on-tertiary-fixed": "#191c1d",
+                        "inverse-surface": "#293138",
+                        "outline-variant": "#c4c6cd",
+                        "secondary": "#2c694e",
+                        "secondary-fixed-dim": "#95d4b3",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#4d6079",
+                        "surface-container-high": "#e0e9f2",
+                        "on-tertiary-container": "#868889",
+                        "primary-fixed": "#d2e4ff",
+                        "outline": "#74777d",
+                        "on-primary-fixed": "#081c32",
+                        "surface-bright": "#f6faff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#aeeecb",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#b5c8e5",
+                        "surface-dim": "#d2dbe4",
+                        "surface-container-highest": "#dbe4ed",
+                        "surface-container-low": "#ecf5fe",
+                        "on-surface-variant": "#44474d",
+                        "background": "#f6faff",
+                        "on-secondary-container": "#316e52",
+                        "on-primary-container": "#7689a4",
+                        "on-primary-fixed-variant": "#364860",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#141d23",
+                        "tertiary-container": "#1e2122",
+                        "surface-variant": "#dbe4ed",
+                        "secondary-fixed": "#b1f0ce",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#000917",
+                        "inverse-on-surface": "#e9f2fb",
+                        "tertiary-fixed": "#e1e3e4",
+                        "surface": "#f6faff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#070a0a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "element-gap": "16px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "display-lg": ["Noto Serif"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Noto Serif"],
+                        "display-lg-mobile": ["Noto Serif"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f6faff;
+            color: #141d23;
+            overflow-x: hidden;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #c4c6cd;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                top: 24px;
+                height: 2px;
+                width: 100%;
+                left: 0;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed tracking-tight font-bold">DR. JULIAN THORNE</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer" href="#about">Bio</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer" href="#experience">Journey</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer" href="#research">Research</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer" href="#publications">Publications</a>
+<button class="ml-4 px-6 py-2 bg-primary text-on-primary rounded-full font-label-lg text-label-lg uppercase tracking-widest hover:opacity-80 transition-opacity cursor-pointer">Book Appointment</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden" id="hero">
+<div class="max-w-container-max mx-auto px-gutter w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
+<!-- Left Side -->
+<div class="max-w-xl reveal">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">Consultant Physician</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg-mobile mb-6 text-primary leading-tight">
+                    Dr. Julian Thorne
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                    Pioneering a synthesis of clinical excellence and premium care. Dedicated to the holistic longevity of high-performance individuals through data-driven medicine.
+                </p>
+<div class="flex flex-wrap gap-4 mb-8">
+<a class="flex items-center gap-2 text-on-surface-variant font-label-md hover:text-primary transition-colors" href="mailto:dr.thorne@example.com">
+<span class="material-symbols-outlined text-xl">mail</span>
+                        dr.thorne@example.com
+                    </a>
+<a class="flex items-center gap-2 text-on-surface-variant font-label-md hover:text-primary transition-colors" href="tel:+1234567890">
+<span class="material-symbols-outlined text-xl">call</span>
+                        +1 (234) 567-890
+                    </a>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-xl">location_on</span>
+                        London, UK
+                    </div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-xl font-label-lg text-label-lg flex items-center gap-2 hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined">download</span>
+                        Download CV
+                    </button>
+<button class="px-8 py-4 bg-surface-container-highest text-primary rounded-xl font-label-lg text-label-lg flex items-center gap-2 hover:bg-surface-dim transition-all">
+<span class="material-symbols-outlined">work</span>
+                        LinkedIn Profile
+                    </button>
+</div>
+</div>
+<!-- Right Side (Doctor Image) -->
+<div class="relative flex justify-center lg:justify-end reveal" style="transition-delay: 200ms;">
+<div class="relative w-full max-w-lg rounded-2xl overflow-hidden bg-surface-container-high">
+<img alt="Dr Julian Thorne Portrait" class="w-full h-auto object-cover object-top" src="https://lh3.googleusercontent.com/aida/AP1WRLv75h96qs9NoUWhpQd7DK0IsP03JUqYtFnY4wS1SiuUk2xD_4xzb-VQgIDU16RFAlJlGOk54u-kWMELXDNoAjkFikS_qk3DZYyeZ7vfKMYNWzzQ3oPfAnSThHy3rox73dLtjn9zLSfxdMbeBrVLd175pAIflO_P9c7fwSsmzn6UK0wBVGwHQO7InPhDcilPzOTx26gvV80oMqtwIh-UhkuytspTjEQceUJC_XoX30HMaObIGHwNLvcpdwBj"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Statistics Bar -->
+<section class="pb-24 px-gutter -mt-8 relative z-20">
+<div class="max-w-5xl mx-auto bg-surface-container-lowest rounded-2xl shadow-sm p-8 grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+<div class="text-center">
+<span class="material-symbols-outlined text-secondary text-3xl mb-2">person</span>
+<div class="font-headline-md text-headline-md text-primary mb-1">5+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Years of Experience</div>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-secondary text-3xl mb-2">school</span>
+<div class="font-headline-md text-headline-md text-primary mb-1">MBBS, MD</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Internal Medicine</div>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-secondary text-3xl mb-2">article</span>
+<div class="font-headline-md text-headline-md text-primary mb-1">10+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Publications</div>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-secondary text-3xl mb-2">favorite</span>
+<div class="font-headline-md text-headline-md text-primary mb-1">1000+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Patients Treated</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 bg-surface-container" id="about">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Left Portrait & Badge -->
+<div class="relative reveal">
+<div class="rounded-2xl overflow-hidden bg-surface-container-high aspect-[3/4] max-w-md mx-auto lg:mx-0">
+<img alt="Dr Julian Thorne" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida/AP1WRLv75h96qs9NoUWhpQd7DK0IsP03JUqYtFnY4wS1SiuUk2xD_4xzb-VQgIDU16RFAlJlGOk54u-kWMELXDNoAjkFikS_qk3DZYyeZ7vfKMYNWzzQ3oPfAnSThHy3rox73dLtjn9zLSfxdMbeBrVLd175pAIflO_P9c7fwSsmzn6UK0wBVGwHQO7InPhDcilPzOTx26gvV80oMqtwIh-UhkuytspTjEQceUJC_XoX30HMaObIGHwNLvcpdwBj"/>
+</div>
+<div class="absolute -bottom-8 -right-8 lg:-right-16 bg-primary-container text-on-primary p-6 rounded-xl shadow-lg max-w-xs">
+<div class="flex items-start gap-4 mb-2">
+<span class="material-symbols-outlined text-secondary-fixed">verified</span>
+<div class="font-label-lg font-bold">Evidence-Based Medicine</div>
+</div>
+<div class="text-on-primary-container text-sm ml-10">Patient-Centered Care</div>
+</div>
+</div>
+<!-- Right Content -->
+<div class="reveal" style="transition-delay: 200ms;">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">About Me</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 leading-tight">
+                    Driven by Knowledge, Guided by Compassion
+                </h2>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-6 mb-12">
+<p>With over two decades of experience in internal medicine, Dr. Thorne has redefined the patient experience. His practice focuses on preventative strategies and executive health optimizations that go beyond the standard clinical visit.</p>
+<p>Educated at the world's leading medical institutions, he combines academic rigor with a bespoke approach, ensuring every patient receives a personalized blueprint for vitality and longevity.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="text-center p-4 bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-2">person_check</span>
+<div class="font-label-md text-primary">Patient Focused</div>
+</div>
+<div class="text-center p-4 bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-2">verified_user</span>
+<div class="font-label-md text-primary">Clinical Excellence</div>
+</div>
+<div class="text-center p-4 bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-2">menu_book</span>
+<div class="font-label-md text-primary">Continuous Learning</div>
+</div>
+<div class="text-center p-4 bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-2">health_and_safety</span>
+<div class="font-label-md text-primary">Ethical Care</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Journey Timeline -->
+<section class="py-24 bg-background" id="experience">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal">
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2 block">Professional Journey</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Education &amp; Training</h2>
+</div>
+<button class="px-6 py-3 border border-outline text-primary rounded-xl font-label-md hover:bg-surface-container-low transition-colors">
+                    View Full Timeline &gt;
+                </button>
+</div>
+<div class="relative timeline-line pt-12 md:pt-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Item 1 -->
+<div class="relative z-10 flex flex-col md:items-center text-left md:text-center reveal" style="transition-delay: 100ms;">
+<div class="w-12 h-12 bg-surface-container-lowest border-2 border-outline-variant rounded-full flex items-center justify-center mb-6 z-10 md:mb-12 md:mt-0 mt-[-24px] ml-[-24px] md:ml-0">
+<span class="material-symbols-outlined text-secondary">school</span>
+</div>
+<h3 class="font-label-lg font-bold text-primary mb-2">MBBS</h3>
+<p class="font-label-md text-on-surface-variant mb-2">Johns Hopkins University<br/>School of Medicine</p>
+<span class="font-label-md text-secondary font-bold">2004</span>
+</div>
+<!-- Item 2 -->
+<div class="relative z-10 flex flex-col md:items-center text-left md:text-center reveal" style="transition-delay: 200ms;">
+<div class="w-12 h-12 bg-surface-container-lowest border-2 border-outline-variant rounded-full flex items-center justify-center mb-6 z-10 md:mb-12 md:mt-0 mt-[-24px] ml-[-24px] md:ml-0">
+<span class="material-symbols-outlined text-secondary">local_hospital</span>
+</div>
+<h3 class="font-label-lg font-bold text-primary mb-2">MD - Internal Medicine</h3>
+<p class="font-label-md text-on-surface-variant mb-2">Johns Hopkins Medicine</p>
+<span class="font-label-md text-secondary font-bold">2008</span>
+</div>
+<!-- Item 3 -->
+<div class="relative z-10 flex flex-col md:items-center text-left md:text-center reveal" style="transition-delay: 300ms;">
+<div class="w-12 h-12 bg-surface-container-lowest border-2 border-outline-variant rounded-full flex items-center justify-center mb-6 z-10 md:mb-12 md:mt-0 mt-[-24px] ml-[-24px] md:ml-0">
+<span class="material-symbols-outlined text-secondary">workspace_premium</span>
+</div>
+<h3 class="font-label-lg font-bold text-primary mb-2">Fellowship</h3>
+<p class="font-label-md text-on-surface-variant mb-2">Royal Academy Medicine</p>
+<span class="font-label-md text-secondary font-bold">2012</span>
+</div>
+<!-- Item 4 -->
+<div class="relative z-10 flex flex-col md:items-center text-left md:text-center reveal" style="transition-delay: 400ms;">
+<div class="w-12 h-12 bg-surface-container-lowest border-2 border-outline-variant rounded-full flex items-center justify-center mb-6 z-10 md:mb-12 md:mt-0 mt-[-24px] ml-[-24px] md:ml-0">
+<span class="material-symbols-outlined text-secondary">stars</span>
+</div>
+<h3 class="font-label-lg font-bold text-primary mb-2">Chief of Staff</h3>
+<p class="font-label-md text-on-surface-variant mb-2">Thorne Medical Group</p>
+<span class="font-label-md text-secondary font-bold">2018</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Specializations -->
+<section class="py-24 bg-surface-container" id="specializations">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-16 text-center reveal">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">Expertise</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Focused Specializations</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow reveal" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">cardiology</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-primary">Cardiovascular Health</h3>
+<p class="text-on-surface-variant">Advanced lipidology and vascular health assessments for early detection and mitigation of cardiac risks.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow reveal" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">metabolism</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-primary">Metabolic Optimization</h3>
+<p class="text-on-surface-variant">Precision endocrine balancing and nutritional strategies to optimize energy, weight, and mental clarity.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow reveal" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">biotech</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-primary">Longevity Medicine</h3>
+<p class="text-on-surface-variant">Integrating the latest research in senescence and cellular health to extend the human healthspan.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Research & Publications Section -->
+<section class="py-24 bg-background" id="research">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">Academic Contribution</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Research &amp; Publications</h2>
+</div>
+<button class="font-label-md text-label-md uppercase tracking-widest font-bold border-b-2 border-primary pb-1">View ResearchGate</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="p-8 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant hover:border-primary transition-colors cursor-pointer reveal">
+<div class="text-secondary font-bold mb-4 font-label-md">THE LANCET · 2023</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-4">Cellular Senescence and its impact on Adult Metabolic Syndrome: A Longitudinal Study.</h4>
+<span class="material-symbols-outlined text-on-surface-variant">arrow_outward</span>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant hover:border-primary transition-colors cursor-pointer reveal" style="transition-delay: 100ms;">
+<div class="text-secondary font-bold mb-4 font-label-md">NEJM · 2021</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-4">Precision Nutrition: Tailoring Micronutrient Intake via Real-time Genomic Monitoring.</h4>
+<span class="material-symbols-outlined text-on-surface-variant">arrow_outward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary-container py-12 w-full">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-element-gap">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-sm text-headline-sm text-on-primary dark:text-primary-fixed mb-2">DR. JULIAN THORNE</div>
+<div class="font-body-md text-body-md text-on-primary-container/70">© 2024 Dr. Julian Thorne. All Rights Reserved.</div>
+</div>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary hover:underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary hover:underline transition-all" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary hover:underline transition-all" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Reveal Animations on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body></html>
